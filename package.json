@@ -1,7 +1,7 @@
 {
-  "name": "webmontag-react-shoppingchart",
+  "name": "webmontag-react-shoppingcart",
   "version": "0.0.0",
-  "description": "A shopping chard example in react",
+  "description": "A shopping cart example in react",
   "main": "index.js",
   "scripts": {
     "lint": "eslint src",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ranzwertig/webmontag-react-shoppingchart.git"
+    "url": "https://github.com/ranzwertig/webmontag-react-shoppingcart.git"
   },
   "author": "Christian Ranz <cr@codastic.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ranzwertig/webmontag-react-shoppingchart/issues"
+    "url": "https://github.com/ranzwertig/webmontag-react-shoppingcart/issues"
   },
-  "homepage": "https://github.com/ranzwertig/webmontag-react-shoppingchart",
+  "homepage": "https://github.com/ranzwertig/webmontag-react-shoppingcart",
   "devDependencies": {
     "babel-core": "^5.6.15",
     "babelify": "^6.1.2",

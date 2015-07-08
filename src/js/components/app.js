@@ -1,6 +1,6 @@
 import React from 'react/addons';
 
-export default function create(ProductList, ChartCount, ChartList) {
+export default function create(ProductList, CartCount, CartList) {
   class App extends React.Component {
 
     shouldComponentUpdate() {
@@ -12,10 +12,10 @@ export default function create(ProductList, ChartCount, ChartList) {
         <section className="app">
           <h1>Products</h1>
           <ProductList />
-          <h2>Chart count</h2>
-          <ChartCount />
-          <h2>Chart</h2>
-          <ChartList />
+          <h2>Cart count</h2>
+          <CartCount />
+          <h2>Cart</h2>
+          <CartList />
         </section>
       );
     }

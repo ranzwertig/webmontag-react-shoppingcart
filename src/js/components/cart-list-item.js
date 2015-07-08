@@ -1,8 +1,8 @@
 import React from 'react/addons';
 import {Record} from 'immutable';
 
-export default function create(chartAction) {
-  class ChartListItem extends React.Component {
+export default function create(cartAction) {
+  class CartListItem extends React.Component {
 
     shouldComponentUpdate() {
       return React.addons.PureRenderMixin.shouldComponentUpdate.apply(this, arguments);
@@ -13,25 +13,25 @@ export default function create(chartAction) {
       return (
         <li>
           {item.quantity}x <a href={item.link}>{item.name}</a>
-          <button onClick={this.removeFromChart}>-</button>
+          <button onClick={this.removeFromCart}>-</button>
         </li>
       );
     }
 
     constructor(props) {
       super(props);
-      this.removeFromChart = this.removeFromChart.bind(this);
+      this.removeFromCart = this.removeFromCart.bind(this);
     }
 
-    removeFromChart() {
+    removeFromCart() {
       const item = this.props.item.toJS();
-      chartAction.remove(item.id);
+      cartAction.remove(item.id);
     }
   }
 
-  ChartListItem.propTypes = {
+  CartListItem.propTypes = {
     item: React.PropTypes.instanceOf(Record).isRequired
   };
 
-  return ChartListItem;
+  return CartListItem;
 }

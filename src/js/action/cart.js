@@ -1,9 +1,9 @@
-import {CHART} from '../constant';
+import {CART} from '../constant';
 
 export default function create(dispatcher) {
   function add(id, name, link, quantity = 1) {
     dispatcher.dispatch({
-      actionType: CHART.CHART_ITEM_ADD,
+      actionType: CART.CART_ITEM_ADD,
       id,
       name,
       quantity
@@ -12,7 +12,7 @@ export default function create(dispatcher) {
 
   function remove(id) {
     dispatcher.dispatch({
-      actionType: CHART.CHART_ITEM_REMOVE,
+      actionType: CART.CART_ITEM_REMOVE,
       id
     });
   }

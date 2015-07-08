@@ -1,6 +1,6 @@
 import React from 'react/addons';
 
-export default function create(chartAction) {
+export default function create(cartAction) {
   class ProductItem extends React.Component {
 
     shouldComponentUpdate() {
@@ -11,18 +11,18 @@ export default function create(chartAction) {
       return (
         <li>
           {this.props.id} – <a href={this.props.link}>{this.props.name}</a>
-          <button onClick={this.addToChart}>+</button>
+          <button onClick={this.addToCart}>+</button>
         </li>
       );
     }
 
     constructor(props) {
       super(props);
-      this.addToChart = this.addToChart.bind(this);
+      this.addToCart = this.addToCart.bind(this);
     }
 
-    addToChart() {
-      chartAction.add(
+    addToCart() {
+      cartAction.add(
         this.props.id,
         this.props.name,
         this.props.link

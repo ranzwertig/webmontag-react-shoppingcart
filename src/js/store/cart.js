@@ -1,7 +1,7 @@
 import {Map, Record} from 'immutable';
 import {EventEmitter} from 'events';
 
-import {CHART, CHANGE_EVENT} from '../constant';
+import {CART, CHANGE_EVENT} from '../constant';
 
 export default function create(dispatcher) {
   const Item = new Record({
@@ -12,7 +12,7 @@ export default function create(dispatcher) {
   });
   let items = new Map();
 
-  class ChartStore extends EventEmitter {
+  class CartStore extends EventEmitter {
 
     constructor() {
       super();
@@ -38,7 +38,7 @@ export default function create(dispatcher) {
     }
   }
 
-  const store = new ChartStore();
+  const store = new CartStore();
 
   function add(id, name, link, quanitity) {
     if (items.has(id)) {
@@ -67,10 +67,10 @@ export default function create(dispatcher) {
 
   dispatcher.register(function(action) {
     switch (action.actionType) {
-      case CHART.CHART_ITEM_ADD:
+      case CART.CART_ITEM_ADD:
         add(action.id, action.name, action.link, action.quantity);
         break;
-      case CHART.CHART_ITEM_REMOVE:
+      case CART.CART_ITEM_REMOVE:
         remove(action.id);
         break;
       default:

@@ -1,16 +1,16 @@
 import React from 'react/addons';
 
-export default function create(ChartListItem, chartStore) {
+export default function create(CartListItem, cartStore) {
   function getStateFromStores() {
     return {
-      items: chartStore.getAll()
+      items: cartStore.getAll()
     };
   }
 
-  class ChartList extends React.Component {
+  class CartList extends React.Component {
 
     componentDidMount() {
-      chartStore.addChangeListener(this._change);
+      cartStore.addChangeListener(this._change);
     }
 
     shouldComponentUpdate() {
@@ -18,16 +18,16 @@ export default function create(ChartListItem, chartStore) {
     }
 
     componentWillUnmount() {
-      chartStore.removeChangeListener(this._change);
+      cartStore.removeChangeListener(this._change);
     }
 
     render() {
-      let chartItems = this.state.items.map((item) => {
-        return (<ChartListItem item={item}/>);
+      let cartItems = this.state.items.map((item) => {
+        return (<CartListItem item={item}/>);
       });
       return (
         <ul>
-          {chartItems}
+          {cartItems}
         </ul>
       );
     }
@@ -43,5 +43,5 @@ export default function create(ChartListItem, chartStore) {
     }
   }
 
-  return ChartList;
+  return CartList;
 }

@@ -2,30 +2,30 @@ import React from 'react/addons';
 
 import createDispacher from './service/dispatcher';
 
-import createChartAction from './action/chart';
+import createCartAction from './action/cart';
 
-import createChartStore from './store/chart';
+import createCartStore from './store/cart';
 
-import createChartCountComponent from './components/chart-count';
+import createCartCountComponent from './components/cart-count';
 import createAppComponent from './components/app';
 import createProductItemComponent from './components/product-item';
 import createProductListComponent from './components/product-list';
-import createChartListComponent from './components/chart-list';
-import createChartListItemComponent from './components/chart-list-item';
+import createCartListComponent from './components/cart-list';
+import createCartListItemComponent from './components/cart-list-item';
 
 export function create() {
   const appDispatcher = createDispacher();
 
-  const chartActions = createChartAction(appDispatcher);
+  const cartActions = createCartAction(appDispatcher);
 
-  const chartStore = createChartStore(appDispatcher);
+  const cartStore = createCartStore(appDispatcher);
 
-  const ChartCountComponent = createChartCountComponent(chartStore);
-  const ProductItemComponent = createProductItemComponent(chartActions);
+  const CartCountComponent = createCartCountComponent(cartStore);
+  const ProductItemComponent = createProductItemComponent(cartActions);
   const ProductListComponent = createProductListComponent(ProductItemComponent);
-  const ChartListItemComponent = createChartListItemComponent(chartActions);
-  const ChartListComponent = createChartListComponent(ChartListItemComponent, chartStore);
-  const AppComponent = createAppComponent(ProductListComponent, ChartCountComponent, ChartListComponent);
+  const CartListItemComponent = createCartListItemComponent(cartActions);
+  const CartListComponent = createCartListComponent(CartListItemComponent, cartStore);
+  const AppComponent = createAppComponent(ProductListComponent, CartCountComponent, CartListComponent);
 
   function render(element) {
     const appElement = React.createElement(AppComponent);

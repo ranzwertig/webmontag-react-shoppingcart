@@ -1,6 +1,6 @@
-# webmontag-react-shoppingchart
+# webmontag-react-shoppingcart
 
-A small shopping chard example in react
+A small shopping cart example in react
 
 ## Build
 
