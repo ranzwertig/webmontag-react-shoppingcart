@@ -8,7 +8,8 @@
     "build:before": "mkdir -p dist && mkdir -p dist/js",
     "build:js": "browserify src/js/index.js -s app --outfile=dist/js/index.js -t [babelify --optional es7.classProperties]",
     "build:copy": "cp src/index.html dist/index.html",
-    "build": "npm run build:before && npm run build:js && npm run build:copy"
+    "build": "npm run build:before && npm run build:js && npm run build:copy",
+    "start": "beefy src/js/index.js:dist/js/index.js --open --index=src/index.html -- -s app -t [babelify --optional es7.classProperties]"
   },
   "repository": {
     "type": "git",
