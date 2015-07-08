@@ -1,2 +1,3 @@
 # webmontag-react-shoppingchart
-A small shopping chard example in reackt
+
+A small shopping chard example in react
